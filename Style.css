@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #08001f, #30179d);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.watch-container {
+    width: 100%s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.clock {
+    width:550px;
+    height: 180px;
+    background: rgba(234, 0, 255, 0.2);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    top:70px;
+    border-radius: 5px;
+}
+.clock::before,
+.clock::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 110px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.clock::before {
+    background: #f41b75;
+    transform: translate(-150%, -50%);
+}
+
+.clock::after {
+    background: #1bf4c9;
+    transform: translate(170%, 50%);
+}
+.hour {
+    font-size: 55px;
+}
+
+.hour::after {
+    content: 'HOURS';
+    font-size: 15px;
+}
+
+.minute {
+    font-size: 48px;
+}
+
+.minute::after {
+    content: 'MINUTES';
+    font-size: 15px;
+}
+
+.sec {
+    font-size: 40px;
+}
+
+.sec::after {
+    content: 'SECONDS';
+    font-size: 15px;
+}
+
+.msec {
+    font-size: 30px;
+}
+
+.msec::after {
+    font-size: 15px;
+    content: 'MSECS';
+}
+
+
+.text {
+    font-size: 1.5em;
+    display: flex;
+    padding-left: 35px;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2.5rem;
+}
+
+.button-wrapper {
+    margin-top:130px;
+    width: 100%; 
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    width: 80px;
+    height: 40px;
+    background-color: #87CEEB;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.laps {
+    list-style: none;
+    color: #fff;
+    font-size: 1.5em;
+    overflow: auto;
+    position: relative;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.lap-item {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.number {
+    color: #fcf4f4;
+}
+
+.time-stamp {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.lap-clear {
+    align-self: center;
+    background-color: #e1f2f9;
+    color: #5b3333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 8px 15px;
+    margin-top: 15px;
+}
+
+/* For screens up to 750px */
+@media (max-width: 750px) {
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .clock::before,
+    .clock::after {
+        display: none; 
+    }
+
+    .clock {
+        background: rgba(234, 0, 255, 0.122); 
+        width: 80%; 
+    }
+    .button {
+        margin-bottom: 10px;
+    }
+
+}
+
+/* For screens up to 950px */
+@media (max-width: 950px) {
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .clock {
+        background: rgba(234, 0, 255, 0.096); 
+        width: 80%;
+    }
+    .button {
+        margin-bottom: 10px; 
+    }
+
+}
+
+/* For screens up to 1200px */
+@media (max-width: 1200px) {
+    .clock {
+        width: 450px;
+        height: 150px;
+    }
+}
+
+/* For screens up to 1400px */
+@media (max-width: 1400px) {
+    .watch-container {
+        padding: 20px;
+    }
+}
